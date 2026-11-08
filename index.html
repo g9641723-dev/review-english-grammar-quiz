@@ -267,11 +267,9 @@
 
     function getActiveGasUrl() {
       try {
-        const saved = localStorage.getItem("grammar_quiz_gas_url");
-        return (saved && saved.trim()) ? saved.trim() : DEFAULT_GAS_URL;
-      } catch (e) {
-        return DEFAULT_GAS_URL;
-      }
+        localStorage.removeItem("grammar_quiz_gas_url");
+      } catch (e) {}
+      return DEFAULT_GAS_URL;
     }
 
     function setActiveGasUrl(url) {
