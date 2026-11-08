@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>國中英語文法總複習 Unit 4 完整圖解 & 108-114會考實戰</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .gradient-header {
+      background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #0284c7 100%);
+    }
+    .card-hover {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -8px rgba(79, 70, 229, 0.18);
+    }
+    .option-btn {
+      transition: all 0.15s ease;
+    }
+    .option-btn:hover:not(:disabled) {
+      border-color: #6366f1;
+      background-color: #eef2ff;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Top Toast Notification -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- Header -->
+  <header class="gradient-header text-white shadow-lg sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white/15 backdrop-blur flex items-center justify-center text-xl font-black shadow-inner">
+          ⚡
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 class="text-lg sm:text-xl font-extrabold tracking-tight">國中英語文法總複習 Unit 4 完整圖解 & 108-114會考</h1>
+            <span id="cloud-status-badge" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-100 border border-emerald-400/30">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              已綁定教師成績試算表
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-indigo-100">15 大核心文法視覺化總複習 & 108–114 會考實戰題庫（自動回傳教師 Google Sheet）</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs & Settings -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <button id="tab-btn-atlas" class="px-3.5 py-2 rounded-lg text-sm font-bold bg-white text-indigo-900 shadow-sm transition">
+          📚 15 大文法圖鑑
+        </button>
+        <button id="tab-btn-quiz" class="px-3.5 py-2 rounded-lg text-sm font-bold bg-white/15 text-white hover:bg-white/25 transition">
+          🎯 會考實戰闖關 (65題)
+        </button>
+        <button id="tab-btn-records" class="px-3.5 py-2 rounded-lg text-sm font-bold bg-white/15 text-white hover:bg-white/25 transition">
+          📊 本機作答紀錄
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+
+    <!-- SECTION 1: 15 大文法圖鑑 -->
+    <section id="view-atlas" class="space-y-6">
+      <!-- Family Filter Bar -->
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2 flex-wrap" id="atlas-family-filters">
+          <button data-family="ALL" class="atlas-filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-indigo-600 text-white">全部單元 (13模組 / 15單元)</button>
+          <button data-family="名詞代名詞與比較家族" class="atlas-filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">🎭 名詞代名詞與比較</button>
+          <button data-family="動詞變化與花費家族" class="atlas-filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⚡ 動詞變化與花費</button>
+          <button data-family="時態與被動語態家族" class="atlas-filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">⌛ 時態與被動語態</button>
+          <button data-family="連接詞、問句與三大子句" class="atlas-filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">🧩 連接詞、問句與子句</button>
+        </div>
+        <button id="go-to-quiz-cta" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold shadow-sm transition">
+          立即進入 65 題會考實戰 →
+        </button>
+      </div>
+
+      <!-- Grammar Units Grid -->
+      <div id="grammar-units-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+    </section>
+
+    <!-- SECTION 2: 會考實戰闖關 65題 -->
+    <section id="view-quiz" class="hidden space-y-6">
+      <!-- Student Info & Scope Setup Card -->
+      <div id="quiz-setup-panel" class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-6">
+        <div class="border-b border-slate-100 pb-4 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="text-xl font-extrabold text-slate-900">🎯 108–114 會考文法實戰闖關（自動同步教師試算表）</h2>
+            <p class="text-sm text-slate-500 mt-1">請填寫班級、座號與學生姓名，完成作答並交卷後，成績將自動同步傳送至老師的 Google 試算表。</p>
+          </div>
+          <span class="px-3 py-1 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-bold border border-indigo-200">
+            雲端直連已啟用
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label for="input-class" class="block text-xs font-bold text-slate-700 mb-1">班級 (必填，如 901 / 803)</label>
+            <input id="input-class" type="text" placeholder="例如：901" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm" />
+          </div>
+          <div>
+            <label for="input-seat" class="block text-xs font-bold text-slate-700 mb-1">座號 (必填，如 15)</label>
+            <input id="input-seat" type="text" placeholder="例如：15" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm" />
+          </div>
+          <div>
+            <label for="input-name" class="block text-xs font-bold text-slate-700 mb-1">學生姓名 (必填)</label>
+            <input id="input-name" type="text" placeholder="請輸入真實姓名" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <div>
+            <label for="select-scope" class="block text-xs font-bold text-slate-700 mb-1">選擇測驗範圍</label>
+            <select id="select-scope" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 text-sm font-medium bg-white">
+              <option value="ALL_65">🔥 全部 65 題大滿貫 (完整會考實戰)</option>
+              <option value="RANDOM_20">⚡ 隨機抽考 20 題 (快速隨堂測驗)</option>
+              <option value="RANDOM_10">⏱️ 隨機抽考 10 題 (課堂暖身挑戰)</option>
+              <option value="UNIT_1">單元一：代名詞家族 (14題)</option>
+              <option value="UNIT_2">單元二：不定詞與動名詞 (3題)</option>
+              <option value="UNIT_3_5">單元三~五：使役・連綴・感官動詞 (3題)</option>
+              <option value="UNIT_6">單元六：四大花費動詞 (1題)</option>
+              <option value="UNIT_7">單元七：連接詞大聯盟 (8題)</option>
+              <option value="UNIT_8">單元八：比較級・最高級 (3題)</option>
+              <option value="UNIT_9">單元九：used to 三大辨析 (2題)</option>
+              <option value="UNIT_10">單元十：附加問句 (1題)</option>
+              <option value="UNIT_11">單元十一：名詞子句・間接問句 (1題)</option>
+              <option value="UNIT_12">單元十二：形容詞子句 & 關係代名詞 (5題)</option>
+              <option value="UNIT_13">單元十三：六大核心時態 (19題)</option>
+              <option value="UNIT_14">單元十四：被動語態 (4題)</option>
+              <option value="UNIT_15">單元十五：片語動詞 (1題)</option>
+            </select>
+          </div>
+          <div class="flex items-end gap-3">
+            <button id="start-quiz-btn" class="w-full py-2.5 px-5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+              🚀 開始測驗（交卷自動上傳成績）
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Quiz Panel -->
+      <div id="quiz-active-panel" class="hidden space-y-5">
+        <!-- Sticky Progress Bar -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span id="quiz-student-tag" class="px-3 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold text-xs sm:text-sm"></span>
+            <span id="quiz-scope-tag" class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-semibold text-xs sm:text-sm"></span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="text-xs sm:text-sm font-bold text-slate-600">
+              已作答：<span id="quiz-answered-count" class="text-indigo-600">0</span> / <span id="quiz-total-count">65</span>
+            </div>
+            <div class="text-xs sm:text-sm font-mono font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg">
+              ⏱️ <span id="quiz-timer">00:00</span>
+            </div>
+            <button id="quit-quiz-btn" class="text-xs font-semibold text-slate-500 hover:text-rose-600 px-2 py-1 rounded">
+              返回設定
+            </button>
+          </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="quiz-questions-list" class="space-y-4"></div>
+
+        <!-- Submit Footer -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+          <p class="text-sm text-slate-600">確認所有題目作答完畢後，請點擊右側按鈕交卷，系統將自動批改並將成績同步至老師的 Google 試算表。</p>
+          <button id="submit-quiz-btn" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-md transition">
+            ✅ 正式交卷並傳送成績至教師試算表
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Result Panel -->
+      <div id="quiz-result-panel" class="hidden bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700">測驗結算報告</span>
+            <h3 id="result-title" class="text-2xl font-black text-slate-900 mt-2"></h3>
+            <p id="result-subtitle" class="text-sm text-slate-500 mt-0.5"></p>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="text-center px-5 py-3 rounded-2xl bg-indigo-50 border border-indigo-100">
+              <div class="text-xs font-bold text-indigo-600">百分制得分</div>
+              <div id="result-score-pct" class="text-3xl font-black text-indigo-700">100</div>
+            </div>
+            <div class="text-center px-5 py-3 rounded-2xl bg-emerald-50 border border-emerald-100">
+              <div class="text-xs font-bold text-emerald-600">答對題數</div>
+              <div id="result-score-raw" class="text-2xl font-black text-emerald-700">65 / 65</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud Sync Status Banner -->
+        <div id="result-sync-banner" class="p-4 rounded-xl border flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span id="result-sync-icon" class="text-xl">🔄</span>
+            <div>
+              <div id="result-sync-title" class="text-sm font-bold">正在將成績自動傳送至老師的 Google 試算表...</div>
+              <div id="result-sync-desc" class="text-xs text-slate-600 mt-0.5">系統正透過 Google Apps Script 寫入您的作答紀錄與錯題分析。</div>
+            </div>
+          </div>
+          <button id="retry-sync-btn" class="hidden px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold">
+            重新傳送成績
+          </button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3">
+          <button id="retest-same-btn" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition">
+            🔄 重新挑戰本範圍
+          </button>
+          <button id="back-to-setup-btn" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold transition">
+            🎯 更換測驗範圍
+          </button>
+          <button id="back-to-atlas-btn" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold transition">
+            📚 回 15 大文法圖鑑複習
+          </button>
+        </div>
+
+        <!-- Detailed Review List -->
+        <div class="space-y-3 pt-2">
+          <h4 class="text-base font-extrabold text-slate-900">📌 逐題作答檢視與名師詳解</h4>
+          <div id="result-review-list" class="space-y-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: 本機作答紀錄 -->
+    <section id="view-records" class="hidden space-y-4">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-900">📊 本機測驗歷史紀錄</h2>
+            <p class="text-xs text-slate-500">顯示此裝置上的歷次測驗紀錄與雲端同步狀態（老師的 Google Sheet 已同步保存全班紀錄）。</p>
+          </div>
+          <button id="clear-records-btn" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-rose-600 bg-rose-50 hover:bg-rose-100 transition">
+            清除本機紀錄
+          </button>
+        </div>
+        <div id="local-records-container" class="overflow-x-auto"></div>
+      </div>
+    </section>
+
+  </main>
+
+<script>
+    // ============================================================================
+    // 1. 寫死教師專屬 Google Apps Script (GAS) 網址
+    // ============================================================================
+    const DEFAULT_GAS_URL = "https://script.google.com/macros/s/AKfycbxOKF7yJ1aGYUtwp0D6uHPcrlo-s1Yq1v64bcpickUKnVIZ95W2GyhE_ZfuhqM8ud2_/exec";
+
+    function getActiveGasUrl() {
+      try {
+        const saved = localStorage.getItem("grammar_quiz_gas_url");
+        return (saved && saved.trim()) ? saved.trim() : DEFAULT_GAS_URL;
+      } catch (e) {
+        return DEFAULT_GAS_URL;
+      }
+    }
+
+    function setActiveGasUrl(url) {
+      try {
+        localStorage.setItem("grammar_quiz_gas_url", url.trim());
+      } catch (e) {}
+    }
+
+    // ============================================================================
+    // 2. 15 大核心文法圖鑑完整資料庫
+    // ============================================================================
+    const GRAMMAR_UNITS = [
+      {
+        id: "UNIT_1",
+        title: "單元一｜代名詞大家族 (人稱 / 不定 / 數量)",
+        family: "名詞代名詞與比較家族",
+        icon: "🎭",
+        mantra: "同人反身 by oneself；兩者 the other，三者以上才用 another / others！",
+        visual: "兩者切分：One... the other... ｜ 三者：One... another... the other... ｜ 群體：Some... others... (非全部) / the others (剩下全部)",
+        points: [
+          "所有格代名詞 (mine, yours, his, hers, ours, theirs) = 所有格 + 名詞，句尾不接名詞，常考比較對象一致（如 my dentist -> mine）。",
+          "反身代名詞 (myself, himself...)：主詞與受詞同一人時必用；慣用片語 by oneself = on one's own（獨自）。",
+          "it vs. one：it 指「前面提過的同一個特定事物」或代替整件事；one 指「同類但非特定的其中一個」。",
+          "數量代名詞：Both (兩者都)、All (三者以上都)、Few (極少，表否定，接可數)、Little (極少，表否定，接不可數)。"
+        ],
+        qCount: 14
+      },
+      {
+        id: "UNIT_2",
+        title: "單元二｜不定詞 (to V) 與動名詞 (V-ing)",
+        family: "動詞變化與花費家族",
+        icon: "🏃",
+        mantra: "動名詞當主詞配單數動詞；enjoy / finish / keep / practice / mind 後必接 V-ing！",
+        visual: "未來目標望遠鏡 (want / plan / ask / decide / need + to V) vs. 持續體驗跑步機 (enjoy / keep / finish + V-ing)",
+        points: [
+          "後接 V-ing 的高頻動詞：enjoy（喜愛）、finish（完成）、practice（練習）、keep（持續）、mind（介意）、give up（放棄）。",
+          "後接 to V 的高頻動詞：want、need、plan、decide、hope、ask sb. to V、tell sb. to V。",
+          "動名詞片語 (Playing games...) 或不定詞片語當主詞時，視為「單一事件」，後面動詞一律用單數 (is / was / V-s)。"
+        ],
+        qCount: 3
+      },
+      {
+        id: "UNIT_3_5",
+        title: "單元三～五｜使役動詞．連綴動詞．感官動詞三大天王",
+        family: "動詞變化與花費家族",
+        icon: "🎬",
+        mantra: "使役受詞配原形 V；感官受詞配原形 V 或 V-ing；連綴配形容詞、加 like 配名詞！",
+        visual: "指揮棒 (make / have / let + O + 原形 V) vs. 五感雷達 (see / watch / hear / feel + O + V / V-ing)",
+        points: [
+          "使役動詞 (make 逼迫 / have 請、讓 / let 允許) + 受詞 + 原形動詞 V（注意：help 可接原形 V 或 to V；ask / want / tell 則必須接 to V）。",
+          "感官動詞 (see / watch / look at / hear / listen to / feel / notice) + 受詞 + 原形 V（強調事實全貌）或 V-ing（強調正在進行）。",
+          "對等連接詞陷阱：saw a woman get in his car and drive away（get 與 drive 並列受詞補語，皆用原形）。"
+        ],
+        qCount: 3
+      },
+      {
+        id: "UNIT_6",
+        title: "單元六｜四大花費動詞 (cost / take / spend / pay)",
+        family: "動詞變化與花費家族",
+        icon: "💰",
+        mantra: "先看主詞是人還是物！人用 spend (on / V-ing) 與 pay (for)；It / 物用 cost (錢) 與 take (時間 to V)！",
+        visual: "人物掏錢包：人 + spend + 時間/金錢 + on N / (in) V-ing ｜ 事物計時器：It + takes / took + 人 + 時間 + to V",
+        points: [
+          "人當主詞：Sb. spend(s)/spent + 時間/錢 + on N / V-ing；Sb. pay(s)/paid + 錢 + for 物。",
+          "It / 事物當主詞（花時間）：It takes / took / will take + (人) + 時間 + to V。",
+          "It / 事物當主詞（花金錢）：It / 物 + costs / cost + (人) + 金錢 (+ to V)。"
+        ],
+        qCount: 1
+      },
+      {
+        id: "UNIT_7",
+        title: "單元七｜連接詞大聯盟 (對等 / 因果 / 時間條件)",
+        family: "連接詞、問句與三大子句",
+        icon: "🌉",
+        mantra: "因為所以不並存、雖然但是不合體；祈使句加 or 表「否則」；條件句以現在代未來！",
+        visual: "語意天平：but (語意轉折) / so (因果推論) / or (否則警告) / although (雖然，不可配 but) / until (直到)",
+        points: [
+          "祈使句 / 條件子句結構：If you're interested..., call this number（逗號後主句若無主詞，直接用原形動詞開頭形成祈使句）。",
+          "祈使句 + and（那麼就...）vs. 祈使句 + or（否則...，如 Don't go away..., or the food might burn）。",
+          "從屬連接詞 (Although / Because / If / When / Before / Until)：注意前後兩句的邏輯關係（讓步、因果、條件、時間先後）。"
+        ],
+        qCount: 8
+      },
+      {
+        id: "UNIT_8",
+        title: "單元八｜形容詞與副詞的比較級．最高級",
+        family: "名詞代名詞與比較家族",
+        icon: "🏆",
+        mantra: "兩者 than / of the two 用比較級；三者以上 in / of 用最高級；劣等比較用 less 與 the least！",
+        visual: "領獎台階梯：原級 (as adj./adv. as) → 比較級 (more/-er than) → 最高級 (the most/-est / the least + adj.)",
+        points: [
+          "三者以上群體（如 of the boys in the family）必用最高級：the + -est / the most + adj.。",
+          "劣等最高級：the least + 原級（最不...的），會考常考從後文線索推論「價格是最不重要的 (the least important)」。",
+          "詞性判斷：be 動詞 (was/were) 或連綴動詞後接「形容詞比較級 (more careful)」，一般動詞後才接副詞 (more carefully)。"
+        ],
+        qCount: 3
+      },
+      {
+        id: "UNIT_9",
+        title: "單元九｜used to 的三大黃金辨析",
+        family: "動詞變化與花費家族",
+        icon: "📷",
+        mantra: "過去經常 used to V；現在習慣 be / get used to V-ing；被用來做 be used to V！",
+        visual: "泛黃老照片 (used to + 原形 V：過去習慣但現在沒有了) vs. 日常模式 (be/get used to + N/V-ing)",
+        points: [
+          "used to + 原形 V：表「過去曾經/經常...（暗示現在已不再如此）」，常搭配 In my school days, those days 等回憶過去的語境。",
+          "be / get used to + V-ing / N：表「習慣於...」，此處的 to 是介系詞，後面必接動名詞或名詞。",
+          "be used to + 原形 V (= be used for V-ing)：表「（物品）被用來做...」，屬被動語態。"
+        ],
+        qCount: 2
+      },
+      {
+        id: "UNIT_10",
+        title: "單元十｜附加問句 (Tag Questions)",
+        family: "連接詞、問句與三大子句",
+        icon: "🧲",
+        mantra: "前肯定後否定、前否定後肯定；動詞種類要對應，主詞一律換代名詞！",
+        visual: "正負極磁鐵蹺蹺板：Shelly's (= Shelly is) in the nurse's office, isn't she?",
+        points: [
+          "先看主要子句動詞：be 動詞配 be 動詞 (is -> isn't)；一般動詞配 do/does/did；現在完成式 have/has + p.p. 配 haven't/hasn't。",
+          "縮寫陷阱：Shelly's in the office 的 's 後面接介系詞片語，代表 Shelly is（而非 Shelly has），故附加問句用 isn't she?。",
+          "否定字陷阱：前句若有 never, seldom, hardly, few, little 等否定字，視為否定句，後面附加問句要用肯定！"
+        ],
+        qCount: 1
+      },
+      {
+        id: "UNIT_11",
+        title: "單元十一｜名詞子句．間接問句",
+        family: "連接詞、問句與三大子句",
+        icon: "❓",
+        mantra: "間接問句不倒裝，疑問詞後「主詞 + 動詞」；依上下文挑選正確 Wh- 疑問詞或 whether/if！",
+        visual: "問句進門排好隊：know / ask / tell / wonder + [ wh-疑問詞 / whether / if + 主詞 + 動詞 ]",
+        points: [
+          "間接問句語序：疑問詞 (who / what / where / when / why / how) + S + V（絕對不可倒裝，除非疑問詞本身就是主詞）。",
+          "語意配對：題幹出現 a good reason（好理由），對應詢問原因的疑問詞 why（為何被踢出足球隊）。",
+          "Yes/No 問句改間接問句：用 whether 或 if（是否）引導。"
+        ],
+        qCount: 1
+      },
+      {
+        id: "UNIT_12",
+        title: "單元十二｜形容詞子句 & 關係代名詞",
+        family: "連接詞、問句與三大子句",
+        icon: "🔍",
+        mantra: "先行詞是人用 who、物用 which、通用 that；刮號法先隔開形容詞子句，找出真正的主詞與主要動詞！",
+        visual: "偵探放大鏡：先行詞 N + [ 關係代名詞 who / which / that + 子句 ] + 主要子句動詞 V",
+        points: [
+          "刮號找主動詞：The new medicine [that just came out on the market] has saved thousands of lives.（刮號內為形容詞子句，主句缺主要動詞 has saved）。",
+          "助動詞搭配：Can anyone [who knows the answer] say it out loud?（句首有助動詞 Can，主詞 anyone 後的主要動詞用原形 say）。",
+          "受格關代可省略：songs [(that) they learned at school]（先行詞 songs 在子句中當 learned 的受詞，關代 that/which 可省略）。"
+        ],
+        qCount: 5
+      },
+      {
+        id: "UNIT_13",
+        title: "單元十三｜六大核心時態大滿貫",
+        family: "時態與被動語態家族",
+        icon: "⌛",
+        mantra: "特定過去時刻配過去進行；since / for / yet / already 配完成；時間條件副詞子句以現在代未來！",
+        visual: "時光機軸線：過去完成 (had p.p.) → 過去簡單 (V-ed) / 過去進行 (was/were V-ing) → 現在完成 (have/has p.p.) → 現在 (V/V-s) → 未來 (will V / be going to V)",
+        points: [
+          "時間與條件副詞子句 (when / before / after / until / if / as soon as)：指未來發生的事時，副詞子句用「現在簡單式」代替未來式（如 Before she asks about it...）。",
+          "現在完成式 (have/has + p.p.)：搭配 since + 過去時間點/過去式子句、for + 一段時間、already、yet，表「持續到現在」或「截至目前為止的經驗/完成」。",
+          "過去進行式 (was/were + V-ing)：搭配過去特定時間點（at that time / when the earthquake happened / when I got home），強調當時正在進行的動作。",
+          "過去未來式 (would + V)：在過去的時間點（如 We were so sure that...）預測之後會發生的事，用 would + 原形 V。"
+        ],
+        qCount: 19
+      },
+      {
+        id: "UNIT_14",
+        title: "單元十四｜被動語態 (be + p.p.)",
+        family: "時態與被動語態家族",
+        icon: "🛡️",
+        mantra: "主詞無法自己做動作就用被動 be + p.p.；時態與單複數變化全看 be 動詞！",
+        visual: "承受動作盾牌：主詞 (承受者) + am/is/are/was/were/has been + p.p. (過去分詞) (+ by 行為者)",
+        points: [
+          "先判斷主動或被動：housework（家事，不可數單數）是「被分擔 (is shared)」；小女孩在超市是「被帶走 (was taken away)」；哆啦A夢的耳朵是「被咬 (were bitten)」。",
+          "主動與被動並列陷阱：Some of the shirts were blown away (被吹走，被動) and fell (掉落，自動詞主動過去式) in the pond！"
+        ],
+        qCount: 4
+      },
+      {
+        id: "UNIT_15",
+        title: "單元十五｜動詞片語與情境字彙辨析",
+        family: "動詞變化與花費家族",
+        icon: "🥪",
+        mantra: "看圖辨義與介系詞搭配：bow to (向...鞠躬敬禮)、smile at (對...微笑)、cheer for (為...歡呼)！",
+        visual: "動作搭配指南：bow to sb. (鞠躬) ｜ smile at sb. (微笑) ｜ dance with sb. (共舞) ｜ cheer for sb. (加油)",
+        points: [
+          "會考第一題常考圖表情境搭配片語動詞：bow to（向…彎腰敬禮/鞠躬）、smile at（對…微笑）、cheer for（為…加油）、dance with（與…跳舞）。",
+          "可分雙字動詞（如 take off / turn on / pick up / give up / put on）若受詞為代名詞 (it / them)，必須夾在動詞與介副詞中間（如 turn it off）。"
+        ],
+        qCount: 1
+      }
+    ];
+
+    // ============================================================================
+    // 3. 108–114 會考實戰 65 題完整題庫（含正確答案與名師詳解）
+    // ============================================================================
+    const QUIZ_QUESTIONS = [
+      {
+        id: 1, yearTag: "113會考-20", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "I want to find another dentist because ______ pulled out a good tooth last time I went to him.",
+        opts: ["(A) I", "(B) me", "(C) mine", "(D) myself"],
+        ans: 2,
+        exp: "空格作為 because 子句的主詞，語意為「因為『我的牙醫 (my dentist)』上次拔掉我一顆好牙」，使用所有格代名詞 (C) mine 代替 my dentist。"
+      },
+      {
+        id: 2, yearTag: "109會考-6", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "My wife enjoys going to the movies with her friends, but I like to watch TV at home by ______.",
+        opts: ["(A) I", "(B) me", "(C) myself", "(D) mine"],
+        ans: 2,
+        exp: "片語 by oneself 代表「獨自一人」，本句主詞是 I，故搭配反身代名詞 (C) myself。"
+      },
+      {
+        id: 3, yearTag: "108會考-6", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "The book under Mary's desk is ______, but I don't know why it is there.",
+        opts: ["(A) us", "(B) me", "(C) my", "(D) mine"],
+        ans: 3,
+        exp: "表示「Mary 書桌下的那本書是『我的書 (my book)』」，空格後沒有名詞，故用所有格代名詞 (D) mine。"
+      },
+      {
+        id: 4, yearTag: "114會考-14", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "I guess the rainwater has come in from the kitchen. See? ______ of the windows are closed except the one in the kitchen.",
+        opts: ["(A) All", "(B) Both", "(C) Most", "(D) Some"],
+        ans: 0,
+        exp: "後方有 except the one in the kitchen（除了廚房那扇窗以外），代表其餘「所有 (All) 窗戶都關著」，故選 (A) All。"
+      },
+      {
+        id: 5, yearTag: "114會考-8", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "Mr. and Mrs. Wu have three daughters. Two are in high school, and ______ is in elementary school.",
+        opts: ["(A) each", "(B) the other", "(C) the one", "(D) the next"],
+        ans: 1,
+        exp: "共有三個女兒，前面已提過兩個 (Two)，「剩下的最後一個（特定單數）」固定用 (B) the other。"
+      },
+      {
+        id: 6, yearTag: "113會考-6", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "Chris loves walking with Anna on snowy days, but Anna hates ______ very much.",
+        opts: ["(A) them", "(B) so", "(C) one", "(D) it"],
+        ans: 3,
+        exp: "代替前面提過「walking with Anna on snowy days（在下雪天散步）」這整件事，視為單數特定事物，用 (D) it。"
+      },
+      {
+        id: 7, yearTag: "111會考補-15", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "These birds are the only kind you can see here in January because ______ other kinds of birds fly south for the winter.",
+        opts: ["(A) all", "(B) both", "(C) few", "(D) some"],
+        ans: 0,
+        exp: "既然這種鳥是一月唯一能看到的鳥類，代表「所有其他的鳥類 (all other kinds of birds)」都飛往南方過冬了，故選 (A) all。"
+      },
+      {
+        id: 8, yearTag: "111會考補-2", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "Mary has two brothers. One is ten, and ______ is twelve.",
+        opts: ["(A) another", "(B) other", "(C) others", "(D) the other"],
+        ans: 3,
+        exp: "總數只有兩個兄弟 (two brothers)，「一個是...，另一個是...」固定搭配 One..., and the other...，故選 (D)。"
+      },
+      {
+        id: 9, yearTag: "111會考-18", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "Buses to the airport only come once every hour, and we just missed ______. Why don't we take a taxi?",
+        opts: ["(A) another", "(B) it", "(C) one", "(D) them"],
+        ans: 2,
+        exp: "去機場的公車每小時一班，我們剛錯過了「其中一班 (a bus)」，代替單數同類非特定名詞用 (C) one。"
+      },
+      {
+        id: 10, yearTag: "110會考-14", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "Nora: Can I check your drawer for some tools we can use? Matt: Sure. Take a look. See if you can find ______ in there.",
+        opts: ["(A) any", "(B) it", "(C) others", "(D) those"],
+        ans: 0,
+        exp: "在 if（是否）引導的疑問/條件語境中，代替前面提過的 some tools，應使用 (A) any。"
+      },
+      {
+        id: 11, yearTag: "109會考-13", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "Ms. Johnson has been taking phone calls since she entered the office this morning. Just when she thought she could finally leave work, ______ call came in.",
+        opts: ["(A) another", "(B) each", "(C) the next", "(D) the other"],
+        ans: 0,
+        exp: "正當她以為終於能下班時，「又有另一通」不特定範圍的單數電話打進來，故用 (A) another。"
+      },
+      {
+        id: 12, yearTag: "109會考補-2", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "Do you like goat milk? I just got ______ from the market.",
+        opts: ["(A) them", "(B) some", "(C) any", "(D) another"],
+        ans: 1,
+        exp: "goat milk（羊奶）為不可數名詞，且本句為肯定直述句，故用 (B) some 代替一些羊奶。"
+      },
+      {
+        id: 13, yearTag: "108會考-15", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "______ other waiters in the restaurant have worked here longer than Clark; only Lois and Lana started working here before him.",
+        opts: ["(A) All", "(B) Most", "(C) Some", "(D) Few"],
+        ans: 3,
+        exp: "後句說明「只有 Lois 和 Lana 比他早來這裡工作」，代表餐廳裡「極少數 (Few)」其他服務生比 Clark 資深，故選表否定的 (D) Few。"
+      },
+      {
+        id: 14, yearTag: "108會考-8", unitId: "UNIT_1", topic: "單元一：代名詞家族",
+        q: "It almost killed Kevin to take care of his baby sister for one afternoon. He wondered how his mom could do ______ every day.",
+        opts: ["(A) her", "(B) it", "(C) one", "(D) them"],
+        ans: 1,
+        exp: "do it 指前面提過「take care of his baby sister（照顧小妹）」這整件事，故選 (B) it。"
+      },
+      {
+        id: 15, yearTag: "114會考-4", unitId: "UNIT_2", topic: "單元二：不定詞與動名詞",
+        q: "Cindy enjoys ______ her dad read stories to her before bed.",
+        opts: ["(A) to listen to", "(B) listening to", "(C) listen to", "(D) listens to"],
+        ans: 1,
+        exp: "動詞 enjoy（喜愛、享受）後面必須接動名詞 V-ing，故選 (B) listening to。"
+      },
+      {
+        id: 16, yearTag: "110會考補-7", unitId: "UNIT_2", topic: "單元二：不定詞與動名詞",
+        q: "The little boy often asks his father ______ candies and cookies for him.",
+        opts: ["(A) buy", "(B) buys", "(C) buying", "(D) to buy"],
+        ans: 3,
+        exp: "一般動詞 ask 的句型為 ask + 受詞 + to V（要求某人做某事），故選不定詞 (D) to buy。"
+      },
+      {
+        id: 17, yearTag: "108會考-3", unitId: "UNIT_2", topic: "單元二：不定詞與動名詞",
+        q: "Playing games on the cellphone ______ popular with high school students.",
+        opts: ["(A) is", "(B) are", "(C) being", "(D) to be"],
+        ans: 0,
+        exp: "動名詞片語「Playing games on the cellphone（在手機上玩遊戲）」當主詞時視為單一事件，搭配單數動詞，故選 (A) is。"
+      },
+      {
+        id: 18, yearTag: "111會考補-5", unitId: "UNIT_3_5", topic: "單元三~五：使役・連綴・感官動詞",
+        q: "Don't let kids ______ bicycles on this busy street; it's very dangerous.",
+        opts: ["(A) ride", "(B) to ride", "(C) riding", "(D) are riding"],
+        ans: 0,
+        exp: "let 為使役動詞，後面結構為「let + 受詞 (kids) + 原形動詞 V」，故選 (A) ride。"
+      },
+      {
+        id: 19, yearTag: "112會考-4", unitId: "UNIT_3_5", topic: "單元三~五：使役・連綴・感官動詞",
+        q: "People got very excited when they watched Ms. Smith ______ at the party.",
+        opts: ["(A) danced", "(B) dancing", "(C) has danced", "(D) to dance"],
+        ans: 1,
+        exp: "watched 為感官動詞，結構為「感官動詞 + 受詞 (Ms. Smith) + 原形 V 或 V-ing」，選項中僅有現在分詞 (B) dancing 符合語法。"
+      },
+      {
+        id: 20, yearTag: "111會考-16", unitId: "UNIT_3_5", topic: "單元三~五：使役・連綴・感官動詞",
+        q: "David looked out of the balcony window and saw a woman get in his car ______ away.",
+        opts: ["(A) drive", "(B) drove", "(C) and drive", "(D) and drove"],
+        ans: 2,
+        exp: "感官動詞 saw + 受詞 (a woman) + 原形動詞1 (get in his car) and 原形動詞2 (drive away)，看到女人進他的車並把車開走，兩動作皆為 saw 的受詞補語，故選 (C) and drive。"
+      },
+      {
+        id: 21, yearTag: "111會考-8", unitId: "UNIT_6", topic: "單元六：四大花費動詞",
+        q: "Although it took me lots of time ______ a big meal for ten people, I was happy that everyone enjoyed it.",
+        opts: ["(A) prepare", "(B) to prepare", "(C) preparing", "(D) prepared"],
+        ans: 1,
+        exp: "花費時間的句型：It + takes / took + 人 + 時間 + to V（虛主詞 it 代替後面的不定詞 to prepare...），故選 (B) to prepare。"
+      },
+      {
+        id: 22, yearTag: "114會考-15", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "______ machines have been used to pick fruits for a long time, they were not used on strawberry farms until several years ago.",
+        opts: ["(A) Although", "(B) Because", "(C) Before", "(D) If"],
+        ans: 0,
+        exp: "前句「機器被用來採收水果已經很久了」與後句「直到幾年前才被用在草莓園」為讓步對比關係，故選 (A) Although（雖然）。"
+      },
+      {
+        id: 23, yearTag: "113會考-14", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "Patty spent several days planning to invite Charlie to dinner, ______ she couldn't say a word when they met.",
+        opts: ["(A) but", "(B) if", "(C) or", "(D) so"],
+        ans: 0,
+        exp: "前句「花了幾天計畫邀 Charlie 吃晚餐」與後句「見面時卻一句話都說不出來」語意轉折相反，故選 (A) but（但是）。"
+      },
+      {
+        id: 24, yearTag: "112會考-9", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "Don't go away when you're cooking, ______ the food might burn.",
+        opts: ["(A) but", "(B) if", "(C) or", "(D) so"],
+        ans: 2,
+        exp: "「煮飯時不要走開，『否則 (or)』食物可能會燒焦」，祈使句 + or 表警告或否則的後果，故選 (C) or。"
+      },
+      {
+        id: 25, yearTag: "111會考-2", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "The movie starts at two o'clock, ______ let's meet at the theater at one forty-five.",
+        opts: ["(A) so", "(B) or", "(C) if", "(D) because"],
+        ans: 0,
+        exp: "前句「電影兩點開演（原因）」，後句「所以我們 1:45 在戲院見面吧（結果）」，故選 (A) so。"
+      },
+      {
+        id: 26, yearTag: "111會考補-6", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "______ you don't have time for dinner tonight, perhaps we can just have a quick drink together.",
+        opts: ["(A) Before", "(B) If", "(C) Until", "(D) When"],
+        ans: 1,
+        exp: "「『如果 (If)』你今晚沒時間吃晚餐，或許我們可以只是一起快喝一杯」，表假設條件，故選 (B) If。"
+      },
+      {
+        id: 27, yearTag: "110會考-10", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "Jimmy would not get up for breakfast, ______ his dad had already tried to pull him from his bed several times.",
+        opts: ["(A) although", "(B) because", "(C) if", "(D) until"],
+        ans: 0,
+        exp: "「Jimmy 不肯起床吃早餐，『雖然 (although)』他爸爸已經試著把他從床上拉起來好幾次了」，前後為讓步關係，故選 (A) although。"
+      },
+      {
+        id: 28, yearTag: "110會考-9", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "If you're interested in our business plan, ______ this number and ask for Ms. Lee. She'll answer your questions.",
+        opts: ["(A) calling", "(B) call", "(C) and call", "(D) to call"],
+        ans: 1,
+        exp: "前半為 If 引導的條件副詞子句，逗號後為主要子句；因省略主詞 you 且與後方 and ask 對稱，為原形動詞開頭的祈使句，故選 (B) call。"
+      },
+      {
+        id: 29, yearTag: "108會考-2", unitId: "UNIT_7", topic: "單元七：連接詞大聯盟",
+        q: "Ms. Liu usually gives us a lot of homework, ______ she didn't give us any today.",
+        opts: ["(A) but", "(B) if", "(C) or", "(D) so"],
+        ans: 0,
+        exp: "前句「劉老師通常給很多作業」與後句「今天卻完全沒給」語意相反轉折，故選 (A) but。"
+      },
+      {
+        id: 30, yearTag: "111會考-10", unitId: "UNIT_8", topic: "單元八：比較級・最高級",
+        q: "Bob is ______ of the boys in the family. He never does any housework. His brothers at least take out the garbage sometimes.",
+        opts: ["(A) lazier", "(B) the lazy", "(C) the lazier", "(D) the laziest"],
+        ans: 3,
+        exp: "從後句 His brothers（複數，代表兄弟至少三人以上）以及 of the boys in the family 可知為三者以上比較，應用最高級 (D) the laziest。"
+      },
+      {
+        id: 31, yearTag: "110會考補-12", unitId: "UNIT_8", topic: "單元八：比較級・最高級",
+        q: "After the fire, everyone in the apartment was ______ when they cooked. They did not want any people to be hurt again.",
+        opts: ["(A) more carefully", "(B) more careful", "(C) the most careful", "(D) the most carefully"],
+        ans: 1,
+        exp: "空格前為 be 動詞 was，後面需接形容詞作主詞補語（排除副詞 A、D）；且本句為「火災後比火災前更小心」的兩時段比較，故選形容詞比較級 (B) more careful。"
+      },
+      {
+        id: 32, yearTag: "109會考-15", unitId: "UNIT_8", topic: "單元八：比較級・最高級",
+        q: "For Mike, the price is ______ important thing when he shops for jeans. He cares even more about the shape and the size of the pockets.",
+        opts: ["(A) the more", "(B) the most", "(C) the less", "(D) the least"],
+        ans: 3,
+        exp: "後句說「他更在意版型和口袋大小」，可知價格對他來說是「最不重要的 (the least important)」，故選劣等最高級 (D) the least。"
+      },
+      {
+        id: 33, yearTag: "112會考-23", unitId: "UNIT_9", topic: "單元九：used to 三大辨析",
+        q: "Now I often think of those days with Pip, my pet dog. When I read in my room, he ______ quietly beside me.",
+        opts: ["(A) will come and sit", "(B) comes and sits", "(C) has come and sat", "(D) used to come and sit"],
+        ans: 3,
+        exp: "首句說「現在我常想起過去和愛犬 Pip 在一起的那些日子 (those days)」，描述過去經常發生但現在已不再發生的習慣，用 (D) used to come and sit。"
+      },
+      {
+        id: 34, yearTag: "108會考-13", unitId: "UNIT_9", topic: "單元九：used to 三大辨析",
+        q: "In my school days, I ______ to English radio programs every day. That was how I learned English at that time.",
+        opts: ["(A) listen", "(B) have listened", "(C) used to listen", "(D) was listening"],
+        ans: 2,
+        exp: "由 In my school days（在我的學生時代）與 at that time（在那時）可知為過去的習慣，故選 (C) used to listen。"
+      },
+      {
+        id: 35, yearTag: "109會考補-9", unitId: "UNIT_10", topic: "單元十：附加問句",
+        q: "Henry: Shelly's in the nurse's office, ______ she? Daniel: Yeah, she just cut her finger.",
+        opts: ["(A) wasn't", "(B) isn't", "(C) hasn't", "(D) didn't"],
+        ans: 1,
+        exp: "Shelly's in the nurse's office 中的 Shelly's = Shelly is（現在簡單式 be 動詞肯定句），故附加問句用否定 (B) isn't。"
+      },
+      {
+        id: 36, yearTag: "112會考-10", unitId: "UNIT_11", topic: "單元十一：名詞子句・間接問句",
+        q: "Jerry wanted to know ______ he was kicked off the soccer team, but no one gave him a good reason.",
+        opts: ["(A) where", "(B) when", "(C) whether", "(D) why"],
+        ans: 3,
+        exp: "後半句說「但沒有人給他一個好理由 (a good reason)」，可知 Jerry 想知道他「為什麼 (why)」被踢出足球隊，故選 (D) why。"
+      },
+      {
+        id: 37, yearTag: "113會考-12", unitId: "UNIT_12", topic: "單元十二：形容詞子句 & 關係代名詞",
+        q: "Students ______ to go on the school trip should ask their parents first.",
+        opts: ["(A) who want", "(B) want", "(C) who they want", "(D) what they want"],
+        ans: 0,
+        exp: "主句已有主要動詞 should ask，故主詞 Students 後方需接關係代名詞引導的形容詞子句修飾 Students，先行詞為人且作主格，故選 (A) who want。"
+      },
+      {
+        id: 38, yearTag: "112會考-22", unitId: "UNIT_12", topic: "單元十二：形容詞子句 & 關係代名詞",
+        q: "The new medicine that just came out on the market ______ thousands of lives.",
+        opts: ["(A) and saved", "(B) has saved", "(C) saving", "(D) to save"],
+        ans: 1,
+        exp: "括號法：The new medicine [that just came out on the market] 為含形容詞子句的主詞，整句缺少「主要動詞」，故選完整的動詞時態 (B) has saved。"
+      },
+      {
+        id: 39, yearTag: "112會考-19", unitId: "UNIT_12", topic: "單元十二：形容詞子句 & 關係代名詞",
+        q: "Scott wasn't sure if the young woman before him was ______ pulled him out of a car on fire.",
+        opts: ["(A) who", "(B) the one", "(C) the one she", "(D) the one who"],
+        ans: 3,
+        exp: "was 後方需先有先行詞代名詞 the one（那個人），再接主格關係代名詞 who 引導形容詞子句修飾 the one，故選 (D) the one who。"
+      },
+      {
+        id: 40, yearTag: "110會考-12", unitId: "UNIT_12", topic: "單元十二：形容詞子句 & 關係代名詞",
+        q: "Fiona loves listening to her children sing songs ______ at school.",
+        opts: ["(A) are learned", "(B) that learned", "(C) they learned", "(D) that they are learned"],
+        ans: 2,
+        exp: "先行詞 songs 後接形容詞子句 [(that/which) they learned at school]（他們在學校學的歌），受格關代可省略，故選 (C) they learned。"
+      },
+      {
+        id: 41, yearTag: "109會考補-15", unitId: "UNIT_12", topic: "單元十二：形容詞子句 & 關係代名詞",
+        q: "Can anyone who knows the answer ______ it out loud?",
+        opts: ["(A) say", "(B) says", "(C) saying", "(D) to say"],
+        ans: 0,
+        exp: "句首有助動詞 Can，主詞為 anyone（後面 who knows the answer 為修飾 anyone 的形容詞子句），故主要動詞需搭配助動詞 Can 使用原形動詞 (A) say。"
+      },
+      {
+        id: 42, yearTag: "114會考-18", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Before she ______ about it, you should tell Daphne you broke her favorite cup.",
+        opts: ["(A) asks", "(B) asked", "(C) was asking", "(D) will ask"],
+        ans: 0,
+        exp: "Before 引導的時間副詞子句，以「現在簡單式」代替未來式；主詞 she 為第三人稱單數，故選 (A) asks。"
+      },
+      {
+        id: 43, yearTag: "114會考-10", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Christmas ______ and I want to visit my aunt abroad. Do you have any plans yet?",
+        opts: ["(A) came", "(B) comes", "(C) is coming", "(D) was coming"],
+        ans: 2,
+        exp: "從後句 want to visit 與 Do you have any plans yet? 可知聖誕節「即將到來」，來去動詞 (come/go/leave) 可用現在進行式表即將發生的未來，故選 (C) is coming。"
+      },
+      {
+        id: 44, yearTag: "113會考-21", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Mom: Linda, you've been playing computer games all evening! Have you finished your report? Linda: Well, ______ most of it this afternoon, and I'll finish it by Friday.",
+        opts: ["(A) I would do", "(B) I did", "(C) I was doing", "(D) I'll do"],
+        ans: 1,
+        exp: "對話發生在晚上 (all evening)，因此「今天下午 (this afternoon)」已經過去，描述今天下午已完成的動作使用過去簡單式 (B) I did。"
+      },
+      {
+        id: 45, yearTag: "113會考-15", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "I can't tell you what I think of the movie because I ______ it. I'll probably watch it this Saturday.",
+        opts: ["(A) am not seeing", "(B) don't see", "(C) haven't seen", "(D) won't see"],
+        ans: 2,
+        exp: "後句說「我這週六可能會去看」，代表「截至目前為止還沒看過」，使用現在完成式 (C) haven't seen。"
+      },
+      {
+        id: 46, yearTag: "112會考-6", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Rex did not feel the earthquake this morning. He ______ in the park at the time.",
+        opts: ["(A) jogged", "(B) was jogging", "(C) has jogged", "(D) would jog"],
+        ans: 1,
+        exp: "at the time（在今天早上地震發生的那個當下）為過去特定時間點，強調當時正在進行的動作，故用過去進行式 (B) was jogging。"
+      },
+      {
+        id: 47, yearTag: "112會考-12", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Ed and Jill ______ camping this weekend, so they have to finish their homework by Friday.",
+        opts: ["(A) went", "(B) were going", "(C) are going", "(D) have gone"],
+        ans: 2,
+        exp: "this weekend（這個週末）搭配後句 have to finish... by Friday，表預計在這個週末要去露營，用現在進行式表未來計畫 (C) are going。"
+      },
+      {
+        id: 48, yearTag: "111會考-19", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Ariel ______ every night for a week before her Chinese test and got a very good grade.",
+        opts: ["(A) studied", "(B) studies", "(C) has studied", "(D) was going to study"],
+        ans: 0,
+        exp: "由 and got a very good grade 可知國文考試已經結束，考前一週每晚讀書為過去發生的事實，與 got 對稱使用過去簡單式 (A) studied。"
+      },
+      {
+        id: 49, yearTag: "111會考-15", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Have you found a summer job yet? Mr. Firth ______ someone to take care of his kids during the vacation. Maybe you can talk to him.",
+        opts: ["(A) has looked for", "(B) is looking for", "(C) looks for", "(D) was looking for"],
+        ans: 1,
+        exp: "由後句「或許你可以去跟他談談」可知 Mr. Firth 目前「正在尋找」人選，故用現在進行式 (B) is looking for。"
+      },
+      {
+        id: 50, yearTag: "111會考-13", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Yesterday when I got home from work, my brother ______ for dinner, so he invited me to join him.",
+        opts: ["(A) goes out", "(B) went out", "(C) has gone out", "(D) was going out"],
+        ans: 3,
+        exp: "昨天當我下班到家時，弟弟「正要出門 (was going out)」吃晚餐，所以邀請我一起去，用過去進行式表過去當下正準備進行的動作，故選 (D)。"
+      },
+      {
+        id: 51, yearTag: "111會考-11", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Aunt Gina has lived in this town for more than sixty years, so she ______ it very well.",
+        opts: ["(A) will know", "(B) knew", "(C) knows", "(D) was going to know"],
+        ans: 2,
+        exp: "前句用現在完成式 has lived 表示 Aunt Gina 至今仍住在鎮上，因此她現在對這個鎮非常了解，陳述現在的事實狀態用現在簡單式 (C) knows。"
+      },
+      {
+        id: 52, yearTag: "110會考-7", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "My sister is coming to my home today. She ______ with me for a week.",
+        opts: ["(A) stays", "(B) stayed", "(C) has stayed", "(D) will stay"],
+        ans: 3,
+        exp: "前句 is coming 表示姊姊今天即將來我家，因此她「將會待 (will stay)」一個禮拜，屬未來發生的事，故選 (D) will stay。"
+      },
+      {
+        id: 53, yearTag: "110會考-6", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Our teacher Ms. Wu seldom laughs, but when she ______, everyone in the same building can hear her.",
+        opts: ["(A) can", "(B) does", "(C) has", "(D) will"],
+        ans: 1,
+        exp: "使用助動詞代替前面出現過的一般動詞 laughs（現在簡單式、第三人稱單數），避免重複，故選 (B) does (= laughs)。"
+      },
+      {
+        id: 54, yearTag: "110會考-5", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Paul misses his parents a lot. He ______ them since he came to work in Taiwan a year ago.",
+        opts: ["(A) didn't see", "(B) doesn't see", "(C) hasn't seen", "(D) won't see"],
+        ans: 2,
+        exp: "關鍵字 since + 過去簡單式子句 (since he came...)，主要子句必須搭配「現在完成式」，故選 (C) hasn't seen。"
+      },
+      {
+        id: 55, yearTag: "110會考-2", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Listen! The baby ______ in the bedroom. Why don't you go in and take a look?",
+        opts: ["(A) cried", "(B) cries", "(C) is crying", "(D) will cry"],
+        ans: 2,
+        exp: "句首有感嘆提示字 Listen!（聽！），代表動作「此刻正在進行」，故用現在進行式 (C) is crying。"
+      },
+      {
+        id: 56, yearTag: "109會考-14", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "We were so sure that Jerry ______ well on the difficult job. His past experience in other work showed he was the right guy for it. So when he failed, no one believed it.",
+        opts: ["(A) had done", "(B) did", "(C) has done", "(D) would do"],
+        ans: 3,
+        exp: "We were so sure（我們當時非常確信）為過去時間點，在當時預測他接下來「將會做得很好」，應用過去未來式 (D) would do。"
+      },
+      {
+        id: 57, yearTag: "109會考-6(時態)", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "For the past twenty years, my father ______ in a school library. But he'll leave the job next month.",
+        opts: ["(A) worked", "(B) has worked", "(C) is working", "(D) works"],
+        ans: 1,
+        exp: "For the past twenty years（在過去二十年來）且後句說「下個月才會離職」，代表從過去持續工作到現在，故用現在完成式 (B) has worked。"
+      },
+      {
+        id: 58, yearTag: "109會考補-10", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Dad: Where are you, Mary? Come out! Mom: You know, ______ with you. She won't come out until you find her.",
+        opts: ["(A) she'll play", "(B) she's playing", "(C) she plays", "(D) she played"],
+        ans: 1,
+        exp: "爸爸正在找 Mary，媽媽說「你知道的，她『正在跟你玩 (she's playing with you)』，直到你找到她之前她是不會出來的」，表當下正在進行，選 (B)。"
+      },
+      {
+        id: 59, yearTag: "109會考補-8", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "Amy: How's the weather there in Japan? Is it snowing? Sandy: No, but ______ for the next few days. I learned it from the TV news.",
+        opts: ["(A) it was", "(B) it has", "(C) it is", "(D) it will"],
+        ans: 3,
+        exp: "for the next few days（在接下來幾天）指未來時間，表示現在沒下雪，但接下來幾天「將會下雪 (it will snow)」，用助動詞 will 簡答，故選 (D) it will。"
+      },
+      {
+        id: 60, yearTag: "108會考-11", unitId: "UNIT_13", topic: "單元十三：六大核心時態",
+        q: "______ that last piece of pie? If not, can I have it? I didn't eat much this morning.",
+        opts: ["(A) Had you eaten", "(B) Were you eating", "(C) Do you eat", "(D) Are you going to eat"],
+        ans: 3,
+        exp: "後句問「如果沒有的話，我可以吃嗎？」，代表派還在桌上，詢問對方「你打算要吃那最後一塊派嗎？」，用未來式 (D) Are you going to eat。"
+      },
+      {
+        id: 61, yearTag: "114會考-19", unitId: "UNIT_14", topic: "單元十四：被動語態",
+        q: "It was very windy this morning. Some of the shirts on the balcony were blown away ______ in the pond.",
+        opts: ["(A) fell", "(B) and fell", "(C) fallen", "(D) and fallen"],
+        ans: 1,
+        exp: "襯衫「被吹走 (were blown away，被動)」之後「掉進池塘裡 (and fell in the pond，fall 為不及物動詞，用主動過去式 fell 與 were blown 對等連接)」，故選 (B) and fell。"
+      },
+      {
+        id: 62, yearTag: "113會考-19", unitId: "UNIT_14", topic: "單元十四：被動語態",
+        q: "The housework in Mr. and Mrs. Wang's family ______ between them and their kids. Everyone's got their own job to do.",
+        opts: ["(A) is shared", "(B) are shared", "(C) shares", "(D) share"],
+        ans: 0,
+        exp: "主詞 The housework（家事）為不可數名詞（視為單數），且家事是「被分擔」，故用單數被動語態 (A) is shared。"
+      },
+      {
+        id: 63, yearTag: "112會考-13", unitId: "UNIT_14", topic: "單元十四：被動語態",
+        q: "Doraemon, a blue Japanese robot cat, has hated mice since his ears ______ by a mouse.",
+        opts: ["(A) bit", "(B) bite", "(C) were bitten", "(D) have bitten"],
+        ans: 2,
+        exp: "since 引導過去時間點的子句用過去式，且耳朵 his ears（複數）是「被老鼠咬 (by a mouse)」，故用過去式被動語態 (C) were bitten。"
+      },
+      {
+        id: 64, yearTag: "111會考-17", unitId: "UNIT_14", topic: "單元十四：被動語態",
+        q: "The police haven't found the little girl who ______ at a supermarket. They'll keep doing all they can to find her.",
+        opts: ["(A) took away", "(B) taken away", "(C) has taken away", "(D) was taken away"],
+        ans: 3,
+        exp: "小女孩是「在超市被帶走的」，發生在過去且為被動語態 (be + p.p.)，故選 (D) was taken away。"
+      },
+      {
+        id: 65, yearTag: "110會考-1", unitId: "UNIT_15", topic: "單元十五：片語動詞",
+        q: "In the picture (男孩向老先生彎腰敬禮), the boy is ______ the old man.",
+        opts: ["(A) smiling at", "(B) dancing with", "(C) cheering for", "(D) bowing to"],
+        ans: 3,
+        exp: "向某人彎腰鞠躬敬禮的英文片語為 bow to sb.，故選 (D) bowing to。"
+      }
+    ];
+
+    // ============================================================================
+    // 4. UI 狀態與工具函式
+    // ============================================================================
+    let currentFamilyFilter = "ALL";
+    let activeQuizQuestions = [];
+    let userAnswers = {};
+    let quizStartTime = null;
+    let quizTimerInterval = null;
+    let lastSubmittedPayload = null;
+
+    function showToast(message, type = "info") {
+      const container = document.getElementById("toast-container");
+      const toast = document.createElement("div");
+      const colors = {
+        success: "bg-emerald-600 text-white",
+        error: "bg-rose-600 text-white",
+        info: "bg-indigo-600 text-white"
+      };
+      toast.className = `${colors[type] || colors.info} px-4 py-3 rounded-xl shadow-lg text-xs sm:text-sm font-bold flex items-center justify-between gap-3 pointer-events-auto transition-all`;
+      toast.innerHTML = `<span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.remove();
+      }, 3800);
+    }
+
+    function formatDuration(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+    }
+
+    // ============================================================================
+    // 5. 渲染 15 大文法圖鑑
+    // ============================================================================
+    function renderAtlas() {
+      const grid = document.getElementById("grammar-units-grid");
+      const filtered = currentFamilyFilter === "ALL"
+        ? GRAMMAR_UNITS
+        : GRAMMAR_UNITS.filter(u => u.family === currentFamilyFilter);
+
+      grid.innerHTML = filtered.map(u => `
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 card-hover flex flex-col justify-between gap-4">
+          <div class="space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <span class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg font-bold">${u.icon}</span>
+                <div>
+                  <span class="text-[11px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">${u.family}</span>
+                  <h3 class="text-base font-extrabold text-slate-900 mt-0.5">${u.title}</h3>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold whitespace-nowrap">會考 ${u.qCount} 題</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-amber-50/80 border border-amber-200/80 text-xs font-bold text-amber-900">
+              ⚡ 秒殺口訣：${u.mantra}
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-xs text-slate-700 font-medium">
+              🗺️ 視覺圖解：${u.visual}
+            </div>
+
+            <ul class="space-y-1.5 text-xs text-slate-600 leading-relaxed pl-4 list-disc">
+              ${u.points.map(p => `<li>${p}</li>`).join("")}
+            </ul>
+          </div>
+
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-end">
+            <button data-practice-unit="${u.id}" class="practice-unit-btn px-3.5 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold transition">
+              🎯 單獨練習本單元真題 (${u.qCount}題) →
+            </button>
+          </div>
+        </div>
+      `).join("");
+
+      grid.querySelectorAll(".practice-unit-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const unitId = btn.getAttribute("data-practice-unit");
+          const select = document.getElementById("select-scope");
+          select.value = unitId;
+          switchMainTab("quiz");
+          showToast("已為您切換至該單元專屬題庫，請填寫班級座號姓名後開始作答！", "info");
+        });
+      });
+    }
+
+    // ============================================================================
+    // 6. 切換主分頁
+    // ============================================================================
+    function switchMainTab(tabName) {
+      const views = {
+        atlas: document.getElementById("view-atlas"),
+        quiz: document.getElementById("view-quiz"),
+        records: document.getElementById("view-records")
+      };
+      const btns = {
+        atlas: document.getElementById("tab-btn-atlas"),
+        quiz: document.getElementById("tab-btn-quiz"),
+        records: document.getElementById("tab-btn-records")
+      };
+
+      Object.keys(views).forEach(k => {
+        if (k === tabName) {
+          views[k].classList.remove("hidden");
+          btns[k].className = "px-3.5 py-2 rounded-lg text-sm font-bold bg-white text-indigo-900 shadow-sm transition";
+        } else {
+          views[k].classList.add("hidden");
+          btns[k].className = "px-3.5 py-2 rounded-lg text-sm font-bold bg-white/15 text-white hover:bg-white/25 transition";
+        }
+      });
+
+      if (tabName === "records") {
+        renderLocalRecords();
+      }
+    }
+
+    // ============================================================================
+    // 7. 測驗引擎與自動上傳 GAS
+    // ============================================================================
+    function startQuiz() {
+      const classNum = document.getElementById("input-class").value.trim();
+      const seatNum = document.getElementById("input-seat").value.trim();
+      const studentName = document.getElementById("input-name").value.trim();
+      const scopeSelect = document.getElementById("select-scope");
+      const scopeVal = scopeSelect.value;
+      const scopeText = scopeSelect.options[scopeSelect.selectedIndex].text;
+
+      if (!classNum || !seatNum || !studentName) {
+        showToast("⚠️ 請先完整填寫「班級」、「座號」與「學生姓名」才能開始測驗喔！", "error");
+        return;
+      }
+
+      try {
+        localStorage.setItem("grammar_quiz_student_info", JSON.stringify({
+          classNum,
+          seatNum,
+          studentName
+        }));
+      } catch (e) {}
+
+      if (scopeVal === "ALL_65") {
+        activeQuizQuestions = [...QUIZ_QUESTIONS];
+      } else if (scopeVal === "RANDOM_20") {
+        activeQuizQuestions = [...QUIZ_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 20);
+      } else if (scopeVal === "RANDOM_10") {
+        activeQuizQuestions = [...QUIZ_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 10);
+      } else {
+        activeQuizQuestions = QUIZ_QUESTIONS.filter(q => q.unitId === scopeVal);
+      }
+
+      userAnswers = {};
+      quizStartTime = Date.now();
+      if (quizTimerInterval) clearInterval(quizTimerInterval);
+
+      document.getElementById("quiz-student-tag").textContent = `👤 ${classNum}班 ${seatNum}號 ${studentName}`;
+      document.getElementById("quiz-scope-tag").textContent = scopeText;
+      document.getElementById("quiz-answered-count").textContent = "0";
+      document.getElementById("quiz-total-count").textContent = String(activeQuizQuestions.length);
+      document.getElementById("quiz-timer").textContent = "00:00";
+
+      quizTimerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - quizStartTime) / 1000);
+        document.getElementById("quiz-timer").textContent = formatDuration(elapsed);
+      }, 1000);
+
+      renderQuizQuestions();
+      document.getElementById("quiz-setup-panel").classList.add("hidden");
+      document.getElementById("quiz-result-panel").classList.add("hidden");
+      document.getElementById("quiz-active-panel").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderQuizQuestions() {
+      const list = document.getElementById("quiz-questions-list");
+      list.innerHTML = activeQuizQuestions.map((item, idx) => `
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 space-y-3" id="q-card-${item.id}">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg">
+              第 ${idx + 1} 題 ｜ 【${item.yearTag}】
+            </span>
+            <span class="text-xs font-semibold text-slate-500">${item.topic}</span>
+          </div>
+          <p class="text-sm sm:text-base font-bold text-slate-900 leading-relaxed">${item.q}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+            ${item.opts.map((optText, optIdx) => `
+              <button
+                type="button"
+                data-qid="${item.id}"
+                data-opt="${optIdx}"
+                class="option-btn text-left px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-slate-700"
+              >
+                ${optText}
+              </button>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+
+      list.querySelectorAll(".option-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const qid = Number(btn.getAttribute("data-qid"));
+          const opt = Number(btn.getAttribute("data-opt"));
+          userAnswers[qid] = opt;
+
+          const card = document.getElementById(`q-card-${qid}`);
+          card.querySelectorAll(".option-btn").forEach(b => {
+            const bOpt = Number(b.getAttribute("data-opt"));
+            if (bOpt === opt) {
+              b.className = "option-btn text-left px-4 py-2.5 rounded-xl border-2 border-indigo-600 bg-indigo-50 text-sm font-bold text-indigo-900";
+            } else {
+              b.className = "option-btn text-left px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-slate-700";
+            }
+          });
+
+          document.getElementById("quiz-answered-count").textContent = String(Object.keys(userAnswers).length);
+        });
+      });
+    }
+
+    async function sendScoreToGas(payload) {
+      const banner = document.getElementById("result-sync-banner");
+      const icon = document.getElementById("result-sync-icon");
+      const title = document.getElementById("result-sync-title");
+      const desc = document.getElementById("result-sync-desc");
+      const retryBtn = document.getElementById("retry-sync-btn");
+
+      banner.className = "p-4 rounded-xl border border-indigo-200 bg-indigo-50 flex flex-wrap items-center justify-between gap-3";
+      icon.textContent = "🔄";
+      title.textContent = "正在將成績自動傳送至老師的 Google 試算表...";
+      desc.textContent = "請稍候，系統正將您的作答結果寫入雲端試算表。";
+      retryBtn.classList.add("hidden");
+
+      const gasUrl = getActiveGasUrl();
+      try {
+        await fetch(gasUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        banner.className = "p-4 rounded-xl border border-emerald-200 bg-emerald-50 flex flex-wrap items-center justify-between gap-3";
+        icon.textContent = "✅";
+        title.textContent = "成績已自動傳送至老師的 Google 試算表！";
+        desc.textContent = `已同步記錄：${payload.classNum}班 ${payload.seatNum}號 ${payload.studentName}（${payload.scorePercentage}分，答對 ${payload.score}/${payload.total} 題）`;
+        showToast("🎉 成績已成功傳送至教師 Google 試算表！", "success");
+        return true;
+      } catch (err) {
+        banner.className = "p-4 rounded-xl border border-rose-200 bg-rose-50 flex flex-wrap items-center justify-between gap-3";
+        icon.textContent = "⚠️";
+        title.textContent = "網路連線異常，成績已先保存在本機";
+        desc.textContent = "請確認網路連線後點擊右側「重新傳送成績」按鈕。";
+        retryBtn.classList.remove("hidden");
+        showToast("⚠️ 傳送時發生網路異常，可點擊重新傳送", "error");
+        return false;
+      }
+    }
+
+    function submitQuiz() {
+      const total = activeQuizQuestions.length;
+      const answeredCount = Object.keys(userAnswers).length;
+      if (answeredCount < total) {
+        const missing = total - answeredCount;
+        showToast(`還有 ${missing} 題尚未作答！請完成所有題目後再交卷。`, "error");
+        const firstUnanswered = activeQuizQuestions.find(q => userAnswers[q.id] === undefined);
+        if (firstUnanswered) {
+          const el = document.getElementById(`q-card-${firstUnanswered.id}`);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+
+      if (quizTimerInterval) clearInterval(quizTimerInterval);
+      const elapsedSeconds = Math.max(1, Math.floor((Date.now() - quizStartTime) / 1000));
+      const timeStr = formatDuration(elapsedSeconds);
+
+      let correctCount = 0;
+      const wrongDetails = [];
+
+      activeQuizQuestions.forEach(q => {
+        const uAns = userAnswers[q.id];
+        if (uAns === q.ans) {
+          correctCount++;
+        } else {
+          wrongDetails.push({
+            yearTag: q.yearTag,
+            topic: q.topic,
+            question: q.q,
+            userOpt: q.opts[uAns] || "未作答",
+            correctOpt: q.opts[q.ans],
+            exp: q.exp
+          });
+        }
+      });
+
+      const scorePercentage = Math.round((correctCount / total) * 100);
+      const accuracy = `${scorePercentage}%`;
+      const classNum = document.getElementById("input-class").value.trim();
+      const seatNum = document.getElementById("input-seat").value.trim();
+      const studentName = document.getElementById("input-name").value.trim();
+      const scopeSelect = document.getElementById("select-scope");
+      const scopeText = scopeSelect.options[scopeSelect.selectedIndex].text;
+      const timestamp = new Date().toLocaleString("zh-TW");
+
+      // 同時相容文法測驗 GAS 與老師現有試算表 GAS 的雙重欄位結構
+      const payload = {
+        timestamp,
+        classNum,
+        seatNum,
+        studentName,
+        scope: scopeText,
+        scorePercentage,
+        score: correctCount,
+        total,
+        accuracy,
+        time: timeStr,
+        timeSpent: timeStr,
+        // 相容老師既有 1200 單字 / 300 單字試算表欄位名稱
+        name: `${classNum}班 ${studentName}`,
+        id: `${classNum}-${seatNum}`,
+        range: `[文法] ${scopeText}`,
+        mode: scopeText,
+        wrongDetails
+      };
+
+      lastSubmittedPayload = payload;
+      saveLocalRecord(payload);
+
+      // Render Result Screen
+      document.getElementById("quiz-active-panel").classList.add("hidden");
+      document.getElementById("quiz-result-panel").classList.remove("hidden");
+
+      document.getElementById("result-title").textContent = `${classNum}班 ${seatNum}號 ${studentName} 的測驗結果`;
+      document.getElementById("result-subtitle").textContent = `測驗範圍：${scopeText} ｜ 作答耗時：${timeStr} ｜ 交卷時間：${timestamp}`;
+      document.getElementById("result-score-pct").textContent = `${scorePercentage} 分`;
+      document.getElementById("result-score-raw").textContent = `${correctCount} / ${total}`;
+
+      const reviewList = document.getElementById("result-review-list");
+      reviewList.innerHTML = activeQuizQuestions.map((q, idx) => {
+        const uAns = userAnswers[q.id];
+        const isCorrect = uAns === q.ans;
+        return `
+          <div class="p-4 rounded-xl border ${isCorrect ? "border-emerald-200 bg-emerald-50/40" : "border-rose-200 bg-rose-50/40"} space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-extrabold ${isCorrect ? "text-emerald-700" : "text-rose-700"}">
+                ${isCorrect ? "✅ 答對" : "❌ 答錯"} ｜ 第 ${idx + 1} 題 【${q.yearTag}】 (${q.topic})
+              </span>
+            </div>
+            <p class="text-sm font-bold text-slate-900">${q.q}</p>
+            <div class="text-xs flex flex-wrap gap-4">
+              <span class="${isCorrect ? "text-emerald-700 font-bold" : "text-rose-600 font-bold"}">你的作答：${q.opts[uAns]}</span>
+              <span class="text-emerald-700 font-bold">正確答案：${q.opts[q.ans]}</span>
+            </div>
+            <div class="p-3 rounded-lg bg-white border border-slate-200 text-xs text-slate-700 leading-relaxed">
+              💡 <b>名師詳解：</b>${q.exp}
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      sendScoreToGas(payload);
+    }
+
+    // ============================================================================
+    // 8. 本機歷史紀錄管理
+    // ============================================================================
+    function saveLocalRecord(record) {
+      try {
+        const list = JSON.parse(localStorage.getItem("grammar_quiz_records") || "[]");
+        list.unshift({
+          timestamp: record.timestamp,
+          classNum: record.classNum,
+          seatNum: record.seatNum,
+          studentName: record.studentName,
+          scope: record.scope,
+          scorePercentage: record.scorePercentage,
+          score: record.score,
+          total: record.total,
+          time: record.time
+        });
+        localStorage.setItem("grammar_quiz_records", JSON.stringify(list.slice(0, 50)));
+      } catch (e) {}
+    }
+
+    function renderLocalRecords() {
+      const container = document.getElementById("local-records-container");
+      let list = [];
+      try {
+        list = JSON.parse(localStorage.getItem("grammar_quiz_records") || "[]");
+      } catch (e) {}
+
+      if (list.length === 0) {
+        container.innerHTML = `<div class="py-12 text-center text-sm text-slate-400">尚無本機作答紀錄，快去完成一場會考文法實戰吧！</div>`;
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 text-slate-500 bg-slate-50">
+              <th class="py-2.5 px-3 font-bold">交卷時間</th>
+              <th class="py-2.5 px-3 font-bold">班級座號</th>
+              <th class="py-2.5 px-3 font-bold">姓名</th>
+              <th class="py-2.5 px-3 font-bold">測驗範圍</th>
+              <th class="py-2.5 px-3 font-bold">百分制得分</th>
+              <th class="py-2.5 px-3 font-bold">答對題數</th>
+              <th class="py-2.5 px-3 font-bold">耗時</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            ${list.map(r => `
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3 text-slate-500">${r.timestamp}</td>
+                <td class="py-2.5 px-3 font-semibold">${r.classNum}班 ${r.seatNum}號</td>
+                <td class="py-2.5 px-3 font-bold text-slate-900">${r.studentName}</td>
+                <td class="py-2.5 px-3 text-slate-700">${r.scope}</td>
+                <td class="py-2.5 px-3 font-extrabold text-indigo-600">${r.scorePercentage} 分</td>
+                <td class="py-2.5 px-3 text-emerald-700 font-semibold">${r.score} / ${r.total}</td>
+                <td class="py-2.5 px-3 font-mono text-slate-500">${r.time}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+
+    // ============================================================================
+    // 9. 事件綁定與初始化
+    // ============================================================================
+    window.addEventListener("DOMContentLoaded", () => {
+      // Restore saved student info if any
+      try {
+        const savedInfo = JSON.parse(localStorage.getItem("grammar_quiz_student_info") || "null");
+        if (savedInfo) {
+          if (savedInfo.classNum) document.getElementById("input-class").value = savedInfo.classNum;
+          if (savedInfo.seatNum) document.getElementById("input-seat").value = savedInfo.seatNum;
+          if (savedInfo.studentName) document.getElementById("input-name").value = savedInfo.studentName;
+        }
+      } catch (e) {}
+
+      renderAtlas();
+
+      // Main Navigation Tabs
+      document.getElementById("tab-btn-atlas").addEventListener("click", () => switchMainTab("atlas"));
+      document.getElementById("tab-btn-quiz").addEventListener("click", () => switchMainTab("quiz"));
+      document.getElementById("tab-btn-records").addEventListener("click", () => switchMainTab("records"));
+      document.getElementById("go-to-quiz-cta").addEventListener("click", () => switchMainTab("quiz"));
+
+      // Family Filter Buttons
+      document.querySelectorAll(".atlas-filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentFamilyFilter = btn.getAttribute("data-family");
+          document.querySelectorAll(".atlas-filter-btn").forEach(b => {
+            if (b === btn) {
+              b.className = "atlas-filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-indigo-600 text-white";
+            } else {
+              b.className = "atlas-filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200";
+            }
+          });
+          renderAtlas();
+        });
+      });
+
+      // Quiz Controls
+      document.getElementById("start-quiz-btn").addEventListener("click", startQuiz);
+      document.getElementById("submit-quiz-btn").addEventListener("click", submitQuiz);
+      document.getElementById("quit-quiz-btn").addEventListener("click", () => {
+        if (quizTimerInterval) clearInterval(quizTimerInterval);
+        document.getElementById("quiz-active-panel").classList.add("hidden");
+        document.getElementById("quiz-setup-panel").classList.remove("hidden");
+      });
+      document.getElementById("retest-same-btn").addEventListener("click", startQuiz);
+      document.getElementById("back-to-setup-btn").addEventListener("click", () => {
+        document.getElementById("quiz-result-panel").classList.add("hidden");
+        document.getElementById("quiz-setup-panel").classList.remove("hidden");
+      });
+      document.getElementById("back-to-atlas-btn").addEventListener("click", () => switchMainTab("atlas"));
+      document.getElementById("retry-sync-btn").addEventListener("click", () => {
+        if (lastSubmittedPayload) sendScoreToGas(lastSubmittedPayload);
+      });
+
+      // Clear local records
+      document.getElementById("clear-records-btn").addEventListener("click", () => {
+        try {
+          localStorage.removeItem("grammar_quiz_records");
+        } catch (e) {}
+        renderLocalRecords();
+        showToast("已清除本機歷史紀錄", "info");
+      });
+
+
+    });
+  </script>
+</body>
+</html>
